@@ -1,5 +1,5 @@
-# FROM node:14.17-alpine
-FROM node:16-alpine
+FROM node:14.17-alpine
+# FROM node:16-alpine
 
 RUN apk update
 RUN apk add curl

@@ -34,7 +34,8 @@ services:
       context: ./.docker/
       dockerfile: Dockerfile
      volumes:
-       - ./:/usr/src/app:cached
+      #  - ./:/usr/src/app:cached
+       - ./:/usr/src/app
      stdin_open: true
      tty: true
      ports:
