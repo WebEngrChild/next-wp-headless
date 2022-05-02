@@ -2,7 +2,6 @@
 init:
 	docker-compose build --no-cache
 	docker-compose up -d
-	yarn add next-swc-linux-x64-gnu
 	docker-compose exec front yarn dev
 
 up:
