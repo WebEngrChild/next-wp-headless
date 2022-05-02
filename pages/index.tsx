@@ -25,8 +25,8 @@ export const Home:FC<{
         </p>
         <div className={styles.grid}>
           {posts.map((post, index) => 
-            <Link href={`/post/${post.id}`}>
-              <a key={index}  href="" className={styles.card}>
+            <Link key={index} href={`/post/${post.id}`}>
+              <a href="" className={styles.card}>
                 <h2>{post.title.rendered}</h2>
                 <p>{post.content.rendered}</p>
               </a>

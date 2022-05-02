@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next build && next export", 
+    "serve": "yarn export && serve ./out",
     "lint": "next lint"
   },
   "dependencies": {
@@ -20,6 +22,7 @@
     "@types/react-dom": "18.0.3",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",
+    "serve": "^13.0.2",
     "typescript": "4.6.4"
   }
 }
