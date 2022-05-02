@@ -1,10 +1,9 @@
-import type { GetStaticProps, NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-
-import { WPPost } from '../libs/wpapi/interfaces'
+import type { GetStaticProps } from 'next'
 import { FC } from 'react'
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+import { WPPost } from '../libs/wpapi/interfaces'
+import Link from 'next/link'
 
 export const Home:FC<{
   posts: WPPost[]
@@ -24,44 +23,26 @@ export const Home:FC<{
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
-        {posts.map((post, index) => 
-        <div key={index} className={styles.grid}>
-          <a href="" className={styles.card}>
-            <h2>{post.title.rendered} &rarr;</h2>
-            <p>{post.content.rendered}.</p>
-          </a>
+        <div className={styles.grid}>
+          {posts.map((post, index) => 
+            <Link href={`/post/${post.id}`}>
+              <a key={index}  href="" className={styles.card}>
+                <h2>{post.title.rendered}</h2>
+                <p>{post.content.rendered}</p>
+              </a>
+            </Link>
+          )}
         </div>
-        )}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
 
-export const getStaticProps: GetStaticProps<{
-}> = async () => {
-
-  // この部分でエラー発生したので通常fetch
+export const getStaticProps: GetStaticProps<{}> = async () => {
   const res = await fetch('http://wordpress/wp-json/wp/v2/posts')
-  const posts = await res.json()
+  const posts: WPPost[] = await res.json()
   
-  return {
-    props: {
-      posts
-    }
-  }
+  return { props: { posts } };
 }
 
 export default Home
