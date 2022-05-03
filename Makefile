@@ -16,3 +16,10 @@ build:
 # next.js
 dev:
 	docker-compose exec front yarn dev
+
+exec front:
+	docker-compose exec front sh
+
+# wordpress
+exec wp:
+	docker compose exec wordpress bash
