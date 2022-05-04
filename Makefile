@@ -6,6 +6,7 @@ init:
 
 up:
 	docker-compose up -d
+	docker-compose exec front yarn dev
 
 down:
 	docker-compose down
@@ -17,9 +18,13 @@ build:
 dev:
 	docker-compose exec front yarn dev
 
+serve:
+	docker-compose exec front yarn serve
+
 exec front:
 	docker-compose exec front sh
 
 # wordpress
 exec wp:
 	docker compose exec wordpress bash
+# cd wp-content/themes/twentytwentytwo/

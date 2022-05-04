@@ -4,6 +4,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { WPPost } from '../libs/wpapi/interfaces'
 import Link from 'next/link'
+import axios from 'axios'
 
 export const Home:FC<{
   posts: WPPost[]
@@ -38,11 +39,11 @@ export const Home:FC<{
   )
 }
 
-export const getStaticProps: GetStaticProps<{}> = async () => {
-  const res = await fetch('http://wordpress/wp-json/wp/v2/posts')
-  const posts: WPPost[] = await res.json()
-  
-  return { props: { posts } };
+export const getStaticProps: GetStaticProps = async () => {  
+  const posts: WPPost[] = await axios
+    .get(process.env.WP_URL!)
+    .then(response => response.data)
+  return { props: {posts} };
 }
 
 export default Home
