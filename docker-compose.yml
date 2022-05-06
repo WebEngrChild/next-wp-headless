@@ -15,10 +15,12 @@ services:
       - wp_next
 
    wordpress:
+     build:
+      context: ./.docker/wp
+      dockerfile: Dockerfile
      container_name: wordpress
      depends_on:
        - db
-     image: wordpress:latest
      ports:
        - "8080:80"
      restart: always
@@ -26,12 +28,14 @@ services:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: wordpress
        WORDPRESS_DB_PASSWORD: wordpress
+     volumes:
+       - ./wordpress:/var/www/html
      networks:
       - wp_next
 
    front:
      build:
-      context: ./.docker/
+      context: ./.docker/front
       dockerfile: Dockerfile
      volumes:
        - ./:/usr/src/app
