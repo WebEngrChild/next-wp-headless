@@ -1,9 +1,9 @@
-# Docker
-init:
+start:
 	docker-compose up -d
 	docker-compose exec front yarn
 	docker-compose exec front yarn serve
 
+# Docker
 up:
 	docker-compose up -d
 	docker-compose exec front yarn serve
