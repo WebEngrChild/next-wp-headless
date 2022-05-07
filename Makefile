@@ -1,6 +1,5 @@
 # Docker
 init:
-	docker-compose build --no-cache
 	docker-compose up -d
 	docker-compose exec front yarn
 	docker-compose exec front yarn serve
@@ -15,20 +14,16 @@ down:
 build:
 	docker-compose build --no-cache
 
-# next.js
+# Next
+front:
+	docker-compose exec front sh
+
 dev:
 	docker-compose exec front yarn dev
 
 serve:
 	docker-compose exec front yarn serve
 
-front:
-	docker-compose exec front sh
-
-# wordpress
-# wp-init:
-# 	docker exec -it wordpress /bin/bash -c "/var/www/html/wp-content/conf/addfunctions.php >> /var/www/html/wp-content/themes/twentytwentytwo/functions.php"
-
+# Wordpress
 wp:
 	docker compose exec wordpress bash
-# vim wp-content/themes/twentytwentytwo/functions.php
