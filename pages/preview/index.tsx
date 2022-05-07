@@ -1,7 +1,7 @@
-import { GetServerSideProps } from 'next';
 import axios from 'axios';
-import Post from '../post/[id]';
+import { GetServerSideProps } from 'next';
 import { WPPost } from '../../libs/wpapi/interfaces';
+import Post from '../post/[id]';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const post_url = process.env.WP_URL! + context.query.id + '?_embed&status=draft';
