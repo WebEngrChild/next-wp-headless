@@ -24,6 +24,9 @@ dev:
 serve:
 	docker-compose exec front yarn serve
 
+fix:
+	docker-compose exec front yarn fix
+
 # Wordpress
 wp:
 	docker compose exec wordpress bash
