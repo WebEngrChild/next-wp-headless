@@ -1,4 +1,4 @@
-# Next.js（SSG）× Dockerで作るPreview機能付きヘッドレスWordpressサイト
+# Next.js（SSG）× Docker × TailwindCSSで作るPreview機能付きヘッドレスWordpressサイト
 ## リポジトリのクローン:
 
 ```bash
