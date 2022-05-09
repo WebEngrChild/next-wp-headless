@@ -12,6 +12,7 @@
     "fix:prettier": "prettier --write './**/*.{js,jsx,ts,tsx,json,css}'"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "@next/swc-linux-x64-gnu": "^11.1.2",
     "axios": "^0.27.2",
     "next": "12.1.5",
