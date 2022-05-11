@@ -1,9 +1,10 @@
+import { FC } from 'react';
 
 type Title = {
-  text: string
-}
+  text: string;
+};
 
-export default function Title(props: Title) {
+const Title: FC<Title> = ({ text }) => {
   return (
     <>
       <div className='lg:text-center'>
@@ -11,9 +12,11 @@ export default function Title(props: Title) {
           Let&lsquo;s try it
         </h2>
         <p className='mt-2 text-3xl font-extrabold tracking-tight leading-8 text-gray-900 sm:text-4xl'>
-          {props.text}
+          {text}
         </p>
       </div>
     </>
-  )
-}
+  );
+};
+
+export default Title;

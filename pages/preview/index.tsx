@@ -5,7 +5,6 @@ import Post from '../post/[id]';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const post_url = process.env.WP_URL! + context.query.id + '?_embed&status=draft';
-
   const post = await axios
     .get(post_url, {
       auth: {

@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-export default function Nav() {
+const Nav = () => {
   return (
     <>
       <nav className='flex flex-wrap justify-between items-center p-6 bg-indigo-500'>
@@ -17,16 +17,10 @@ export default function Nav() {
               </a>
             </Link>
           </div>
-          <div>
-            <a
-              href='#'
-              className='inline-block py-2 px-4 mt-4 text-sm leading-none text-white hover:text-indigo-500 hover:bg-white rounded border border-white hover:border-transparent lg:mt-0'
-            >
-              setting
-            </a>
-          </div>
         </div>
       </nav>
     </>
-  )
+  );
 }
+
+export default Nav
