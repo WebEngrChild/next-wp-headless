@@ -1,0 +1,32 @@
+import Link from "next/link";
+
+export default function Nav() {
+  return (
+    <>
+      <nav className='flex flex-wrap justify-between items-center p-6 bg-indigo-500'>
+        <div className='flex shrink-0 items-center mr-6 text-white'>
+          <span className='text-xl font-semibold tracking-tight'>サンプルブログ</span>
+        </div>
+        <div className='block grow w-full lg:flex lg:items-center lg:w-auto'>
+          <div className='text-sm lg:grow'>
+            <Link href='/' passHref>
+              <a href=''>
+                <div className='block mt-4 mr-4 text-indigo-200 hover:text-white lg:inline-block lg:mt-0'>
+                  記事一覧
+                </div>
+              </a>
+            </Link>
+          </div>
+          <div>
+            <a
+              href='#'
+              className='inline-block py-2 px-4 mt-4 text-sm leading-none text-white hover:text-indigo-500 hover:bg-white rounded border border-white hover:border-transparent lg:mt-0'
+            >
+              setting
+            </a>
+          </div>
+        </div>
+      </nav>
+    </>
+  )
+}
